@@ -19,6 +19,9 @@ public class PostNotationService {
     }
 
     public double computing(List<String> postfixForm) {
+        if(postfixForm.isEmpty()){
+            throw new IllegalArgumentException("Postfix form doesn't be empty");
+        }
         for (String token : postfixForm) {
             if (token.matches("\\d+(\\.\\d+)?")) {
                 operands.push(Double.parseDouble(token));

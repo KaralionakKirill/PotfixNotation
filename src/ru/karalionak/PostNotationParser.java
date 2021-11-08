@@ -60,9 +60,9 @@ public class PostNotationParser {
 
     private int receivePriority(String operator) {
         return switch (operator) {
-            case "%", "*", "/" -> 3;
-            case "+", "-", "!" -> 2;
-            case "^" -> 1;
+            case "^" -> 3;
+            case "%", "*", "/" -> 2;
+            case "+", "-", "!" -> 1;
             default -> throw new IllegalArgumentException(operator + " - this operator does not exist ");
         };
     }
